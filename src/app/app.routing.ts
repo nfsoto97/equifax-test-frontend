@@ -6,7 +6,7 @@ export const appRoutes: Route[] = [
     // Redirect empty path to '/login'
     {path: '', pathMatch : 'full', redirectTo: 'login'},
 
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'place'},
+    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'home'},
 
     
     {
@@ -21,7 +21,7 @@ export const appRoutes: Route[] = [
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         children: [
-            {path: 'place', loadChildren: () => import('../app/modules/place/place.module').then(m => m.PlaceModule)},
+            {path: 'home', loadChildren: () => import('../app/modules/place/place.module').then(m => m.PlaceModule)},
         ]
     },
 
