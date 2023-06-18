@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlaceService {
-  private baseUrl = 'http://localhost:8080/places'; // Reemplaza con la URL de tu backend
+  private baseUrl = `${environment.HOST}/places`; // Reemplaza con la URL de tu backend
 
   constructor(private http: HttpClient,private _tokenService:TokenService) { }
 

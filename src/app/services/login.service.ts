@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthRequest } from '../model/login/authRequest';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl = 'http://localhost:8080/auth'; // Reemplaza con la URL de tu backend
+  private baseUrl = `${environment.HOST}/auth`; // Reemplaza con la URL de tu backend
 
 
   constructor(private http: HttpClient) {  }
